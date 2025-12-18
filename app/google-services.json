@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "929401747888",
+    "firebase_url": "https://interior-design-studio-3f923-default-rtdb.firebaseio.com",
+    "project_id": "interior-design-studio-3f923",
+    "storage_bucket": "interior-design-studio-3f923.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929401747888:android:623bc2f650e60414de3e75",
+        "android_client_info": {
+          "package_name": "com.example.interiordeisgnstudio1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFT_bWp8RRGWkUgc28BBMOaII6sG6NKy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
