@@ -1,5 +1,7 @@
 package com.example.interiordeisgnstudio1
 
+import com.example.interiordeisgnstudio1.Model.UserModel
+import com.example.interiordeisgnstudio1.repository.UserRepo
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

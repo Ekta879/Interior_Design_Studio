@@ -1,4 +1,4 @@
-package com.example.interiordeisgnstudio1
+package com.example.interiordeisgnstudio1.view
 
 import android.app.Activity
 import android.content.Intent
@@ -11,57 +11,91 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.interiordeisgnstudio1.R
 import com.example.interiordeisgnstudio1.ui.theme.AccentBrown
-import com.example.interiordeisgnstudio1.ui.theme.White
+import com.example.interiordeisgnstudio1.ui.theme.Cream
+import com.example.interiordeisgnstudio1.ui.theme.EspressoBrown
+import com.example.interiordeisgnstudio1.ui.theme.Mocha
 import kotlinx.coroutines.delay
 
 class SplashActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContent {
-            SplashBody()
+            InteriorSplash()
         }
     }
 }
 
 @Composable
-fun SplashBody() {
+fun InteriorSplash() {
+
     val context = LocalContext.current
     val activity = context as Activity
 
+    // Splash delay + navigation
     LaunchedEffect(Unit) {
-        delay(2000)
-        context.startActivity(Intent(context, LoginActivity::class.java))
+        delay(2500)
+        val intent = Intent(context, LoginActivity::class.java)
+        context.startActivity(intent)
         activity.finish()
     }
 
     Scaffold { padding ->
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(White),
+                .background(Cream),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+
+            // App Logo
             Image(
                 painter = painterResource(R.drawable.logo),
-                contentDescription = "App Logo",
-                modifier = Modifier.size(120.dp)
+                contentDescription = "Interior Logo",
+                modifier = Modifier.size(140.dp)
             )
 
-            Spacer(modifier = Modifier.height(60.dp))
+            Spacer(modifier = Modifier.height(24.dp))
 
-            CircularProgressIndicator(color = AccentBrown)
+            Text(
+                text = "INTERIOR DESIGN",
+                fontSize = 26.sp,
+                fontWeight = FontWeight.Bold,
+                color = EspressoBrown,
+                letterSpacing = 2.sp
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = "Infusing life into spaces with elegance",
+                fontSize = 14.sp,
+                color = Mocha.copy(alpha = 0.8f)
+            )
+
+            Spacer(modifier = Modifier.height(50.dp))
+
+            CircularProgressIndicator(
+                color = AccentBrown,
+                strokeWidth = 3.dp
+            )
         }
     }
 }

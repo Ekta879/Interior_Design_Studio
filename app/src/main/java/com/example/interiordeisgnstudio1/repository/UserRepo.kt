@@ -1,24 +1,24 @@
-package com.example.interiordeisgnstudio1
+package com.example.interiordeisgnstudio1.repository
 
+import com.example.interiordeisgnstudio1.Model.UserModel
 
 interface UserRepo {
-    //    {
-//        "success":true,
-//        "message":"Verification link sent to your email address",
-//        "userId":"sasas"
-//    }
+
     fun login(
-        email: String, password: String,
+        email: String,
+        password: String,
         callback: (Boolean, String) -> Unit
     )
 
     fun register(
-        email: String, password: String,
+        email: String,
+        password: String,
         callback: (Boolean, String, String) -> Unit
     )
 
     fun addUserToDatabase(
-        userId: String, model: UserModel,
+        userId: String,
+        model: UserModel,
         callback: (Boolean, String) -> Unit
     )
 
@@ -27,10 +27,14 @@ interface UserRepo {
         callback: (Boolean, String) -> Unit
     )
 
-    fun deleteAccount(userId: String, callback: (Boolean, String) -> Unit)
+    fun deleteAccount(
+        userId: String,
+        callback: (Boolean, String) -> Unit
+    )
 
     fun editProfile(
-        userId: String, model: UserModel,
+        userId: String,
+        model: UserModel,
         callback: (Boolean, String) -> Unit
     )
 
@@ -39,5 +43,7 @@ interface UserRepo {
         callback: (Boolean, String, UserModel?) -> Unit
     )
 
-    fun getAllUser(callback: (Boolean, String, List<UserModel>?) -> Unit)
+    fun getAllUser(
+        callback: (Boolean, String, List<UserModel>?) -> Unit
+    )
 }
